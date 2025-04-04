@@ -1,3 +1,5 @@
+const gameState = {};
+
 function preload() {
     this.load.image('codey', 'https://content.codecademy.com/courses/learn-phaser/codey.png');
 }
@@ -10,13 +12,15 @@ function create() {
     this.add.circle(200, 200, 20, 0x00FF00);
     this.add.circle(300, 200, 20, 0x0000FF);
     this.add.circle(400, 200, 20, 0xFFFF00);
-    let circle5 = this.add.circle(150, 400, 25, 0xFF00FF);
+    this.add.circle(150, 400, 25, 0xFF00FF); // Static magenta circle
+    gameState.circle = this.add.circle(200, 100, 30, 0x00FFFF); // New cyan circle
     this.codey = this.add.sprite(225, 450, 'codey');
 }
 
 function update() {
     this.codey.x += 1; // Move Codey right
     this.startText.setScale(1 + Math.sin(Date.now() * 0.002) * 0.2); // Pulse "Start Game"
+    gameState.circle.y += 1; // Move new circle downward
 }
 
 const config = {
