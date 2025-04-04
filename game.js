@@ -15,8 +15,8 @@ function create() {
 }
 
 function update() {
-    this.codey.x = 225 + Math.sin(Date.now() * 0.002) * 100;
-    this.startText.setScale(1 + Math.sin(Date.now() * 0.002) * 0.2);
+    this.codey.x += 1; // Move Codey right
+    this.startText.setScale(1 + Math.sin(Date.now() * 0.002) * 0.2); // Pulse "Start Game"
 }
 
 const config = {
